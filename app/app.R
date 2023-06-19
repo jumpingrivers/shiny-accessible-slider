@@ -48,7 +48,11 @@ accessibleSlider = function(inputId, label, value = 0, min = 0, max = 100, step 
 
 
 ui = fluidPage(
-  titlePanel(tags$h1("Diamonds data"), "Diamonds data"),
+  lang = "en",
+  tags$head(
+    tags$title("Shiny app with accessible slider")
+  ),
+  tags$h1("Shiny app with accessible slider"),
   sidebarPanel(
     selectInput("clarity", "Clarity", levels(diamonds$clarity), selectize = FALSE),
     accessibleSlider(
@@ -59,7 +63,9 @@ ui = fluidPage(
       step = 1000,
       value = 5000
     )
-    #sliderInput("price", "Max price ($)", min = 0, max = 20000, step = 1000, value = 10000)
+  ),
+  tags$script(
+    '$("form[role]").removeAttr("role");'
   ),
   mainPanel(
     plotOutput("plot"),
