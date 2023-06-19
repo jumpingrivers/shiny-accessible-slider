@@ -1,0 +1,27 @@
+.accessible-slider-container > div {
+  position: relative;
+  padding-top: 30px;
+}
+
+output {
+  pointer-events: none;
+  background: white;
+  color: black;
+  padding: 4px 8px;
+  position: absolute;
+  border-top-left-radius: 25%;
+  border-top-right-radius: 25%;
+  border: 1px solid black;
+  border-bottom: none;
+  left: 50%;
+  top: 3%;
+  transform: translateX(-50%);
+  min-width: 15%;
+  text-align: center;
+}
+
+input[type="range"] {
+  width: 100%;
+  margin: 0;
+  cursor: pointer;
+}
